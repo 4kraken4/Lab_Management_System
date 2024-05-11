@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cbc_report" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="824f3ea9-034f-47d5-9903-1a731147242f">
+	<property name="ireport.zoom" value="1.1566298682885967"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="5"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="img_rbc" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["F:\\coding saves\\Lab_Management_System(2022-03-19 1035 Dissapointment of the year)\\Lab_Management_System\\src\\com\\wecare\\assets\\image\\logo\\rbc.jpg"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT r.date_time, t.CID, CONCAT(p.fname, " ", p.lname) AS cname, p.gender, c.*, ref.*, dat.* FROM ( ( ( ( `tbl_result` r INNER JOIN `tbl_cbc_result` c ON r.result_id = c.cbc_id ) INNER JOIN tbl_test t ON t.RID = r.result_id ) INNER JOIN tbl_customer p ON p.customer_id = t.CID ) RIGHT JOIN tbl_cbc_reference_unit ref ON ref.cbc_ref_unit_id = 1 ) LEFT JOIN tbl_cbc_reference_data dat ON dat.cbc_ref_id = 1;]]>
+	</queryString>
+	<field name="date_time" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cname" class="java.lang.String"/>
+	<field name="gender" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cbc_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mcv" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hemoglobin" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rbc_count" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="packed_cell_volume" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mch" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdw" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nrbc" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_leucocyte_count" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dlc_neutrophil" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dlc_lymphocyte" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dlc_monocyte" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dlc_eosinophil" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alc_lymphocyte" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mchc" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alc_monocyte" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alc_eosinophil" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alc_basophil" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="platelet_count" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dlc_basophil" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alc_neutrophil" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cbc_ref_unit_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_hemoglobin" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_packed_cell_volume" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_rbc_count" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_mcv" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_mch" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_mchc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_rdw" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_nrbc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_total_leukocyte_count" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_dlc_neutrophil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_dlc_lymphocytes" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_dlc_monocyte" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_dlc_eosinophil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_dlc_basophil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_alc_neutrophil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_alc_lymphocytes" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_alc_monocyte" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_alc_eosinophil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_alc_basophil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ru_platelet_count" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cbc_ref_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_hemoglobin" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_packed_cell_volume" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_rbc_count" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_mcv" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_mch" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_mchc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_rdw" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_nrbc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_total_leukocyte_count" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_dlc_neutrophil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_dlc_lymphocytes" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_dlc_monocyte" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_dlc_eosinophil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_dlc_basophil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_alc_neutrophil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_alc_lymphocytes" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_alc_monocyte" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_alc_eosinophil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rdat_alc_basophil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<pageHeader>
+		<band height="165">
+			<staticText>
+				<reportElement style="Title" x="27" y="11" width="254" height="43" uuid="93b00f07-37f8-44a3-b16f-59b65dd5eb09"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[WeCare labs(pvt)ltd.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="286" y="17" width="1" height="82" uuid="5523f5eb-1cad-4b14-9bbc-688506c25ecf"/>
+			</line>
+			<image>
+				<reportElement x="289" y="0" width="306" height="127" uuid="5d14cb1e-a8cb-4dc9-b6be-093644ff8cda"/>
+				<imageExpression><![CDATA[$P{img_rbc}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="SubTitle" x="81" y="54" width="200" height="22" uuid="b4cb0fc2-188b-4669-aa13-752c206fded4"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[complete blood count]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="107" y="116" width="100" height="13" uuid="fbcbb417-3fd5-4dae-9d4c-9f3eed153f8e"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$F{cname}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement style="Column header" x="107" y="99" width="100" height="13" uuid="1c57bc84-9e11-4342-befd-360eaaeb05cc"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="99" width="57" height="13" uuid="573df520-7e58-47ec-8327-9632e72827a1"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[Issued on: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="116" width="57" height="13" uuid="ab25a438-8f53-4fb2-8985-8ff400396c66"/>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[Owner:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="36">
+			<staticText>
+				<reportElement style="Column header" x="474" y="0" width="83" height="35" uuid="5a934767-ecb0-4574-8f67-211ca28907ae"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Units]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="221" y="1" width="88" height="34" uuid="66e628a5-8153-47d8-ab55-e207d4f5e172"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="341" y="1" width="100" height="35" uuid="fb2f06ef-a1aa-41d4-9567-5dc5ba227241"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Reference level]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="36" y="0" width="531" height="1" uuid="0c40b052-2908-4b81-9e2c-4c5bb54b3b01"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="36" y="35" width="531" height="1" uuid="7f72fa90-bae9-438e-8694-01f73dcfd5cd"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="596" splitType="Stretch">
+			<staticText>
+				<reportElement x="60" y="410" width="100" height="20" forecolor="#333333" uuid="db1aafaa-531b-43b7-8379-08894cbb1a08"/>
+				<text><![CDATA[dlc basophil]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="156" width="100" height="20" forecolor="#333333" uuid="a6461ee7-4f22-4cbf-8b57-ce758085b44c"/>
+				<text><![CDATA[MCHC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="84" y="476" width="100" height="20" forecolor="#333333" uuid="990544c4-ab67-4bd2-8063-d25f2af61e1b"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Monocyte]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="221" y="390" width="88" height="20" forecolor="#333333" uuid="1363f956-2f18-453e-9658-6b60476dab06"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{dlc_eosinophil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="277" width="100" height="20" forecolor="#333333" uuid="a56adf8a-c449-4b98-ad8a-dc8d8b744155"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_total_leukocyte_count}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="460" width="100" height="16" forecolor="#333333" uuid="9b9168ff-cf5a-4052-bb8b-228dcfea32a3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Absolute values]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="370" width="100" height="20" forecolor="#333333" uuid="d128ff95-7341-4ba9-a886-66270eba7dcc"/>
+				<text><![CDATA[dlc neutrophil]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="136" width="100" height="20" forecolor="#333333" uuid="75576272-33a3-4583-a27d-8a80819ece55"/>
+				<text><![CDATA[MCH]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="474" y="476" width="83" height="20" forecolor="#333333" uuid="0f0079f2-22f6-4e11-956b-c8627c9ec458"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_alc_monocyte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="237" width="83" height="20" forecolor="#333333" uuid="eaa27693-c26f-436e-9730-2a167e84ebcb"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_rdw}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="390" width="100" height="20" forecolor="#333333" uuid="af5b314a-f302-4ad8-b187-b9c5286608f4"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_dlc_eosinophil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="410" width="100" height="20" forecolor="#333333" uuid="0bd85b87-5bd0-4384-9d92-510900552bb9"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_dlc_basophil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="97" width="100" height="20" forecolor="#333333" uuid="1c51dd96-71a4-410f-9197-de536b77dffe"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_hemoglobin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="277" width="83" height="20" forecolor="#333333" uuid="5d30e660-5d72-4c01-97ad-0415b0887e3b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_total_leukocyte_count}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="221" y="514" width="88" height="20" forecolor="#333333" uuid="f285b4c2-d067-4570-bf82-e27caed104e3"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{alc_lymphocyte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="217" width="100" height="20" forecolor="#333333" uuid="78914ecf-e85d-4b21-bb65-956ddfec73a7"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_rbc_count}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="330" width="83" height="20" forecolor="#333333" uuid="6afc54cb-dcf1-4b2b-af3b-d369232bf8b5"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_dlc_lymphocytes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="117" width="100" height="20" forecolor="#333333" uuid="2c1146e5-6239-415d-88b7-da66479bd649"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_mcv}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="257" width="100" height="20" forecolor="#333333" uuid="d8e5b5c0-234a-4ba9-8076-0d9935a5e07f"/>
+				<text><![CDATA[PCV]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="221" y="116" width="88" height="20" forecolor="#333333" uuid="bb571d02-f90b-4b22-9de3-2a6f72ce6516"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{mcv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="97" width="83" height="20" forecolor="#333333" uuid="7819ab7c-7a06-4acb-bd3e-b895c3c966fd"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_hemoglobin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="137" width="100" height="20" forecolor="#333333" uuid="bd1bef1d-7f39-4f96-96ae-82f6afa2e83b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_mch}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="494" width="83" height="20" forecolor="#333333" uuid="1a813280-062e-4d01-9041-211b879a302e"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_alc_eosinophil}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="84" y="496" width="100" height="20" forecolor="#333333" uuid="dd8cca24-552c-4702-bed4-94fadd0e3eb1"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Eosinophil]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="221" y="156" width="88" height="20" forecolor="#333333" uuid="a66dbaf6-5f0d-40cc-9af1-8c330fc57b65"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{mchc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="217" width="100" height="20" forecolor="#333333" uuid="a55e95e2-703d-4cac-8019-5b800f2bf258"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RBC count]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="116" width="100" height="20" forecolor="#333333" uuid="0c3bc656-8bce-496d-85fc-99fff854b0c1"/>
+				<text><![CDATA[MCV]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="474" y="512" width="83" height="20" forecolor="#333333" uuid="cf986017-75b7-417a-98c4-17adeb565f43"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_alc_lymphocytes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="157" width="100" height="20" forecolor="#333333" uuid="73ce44d8-e401-426f-9f4a-df24afde8b34"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_mchc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="277" width="100" height="20" forecolor="#333333" uuid="64d28b53-5ddc-4525-a0fd-9384caf2d341"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Leucocyte count]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="96" width="100" height="20" forecolor="#333333" uuid="37566bf5-4901-439b-b442-f219622fbcc6"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hemoglobin]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="341" y="330" width="100" height="20" forecolor="#333333" uuid="369b4570-f5bd-4286-a26e-96c4aea2c2ce"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_dlc_lymphocytes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="117" width="83" height="20" forecolor="#333333" uuid="4bd768e9-cd57-41ec-8058-3c4413584bf3"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_mcv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="257" width="100" height="20" forecolor="#333333" uuid="a1c6c594-9157-4389-84f6-abeab9e992c5"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_packed_cell_volume}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="350" width="100" height="20" forecolor="#333333" uuid="010822ee-207e-4c2d-a950-2ef0253e5abd"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_dlc_monocyte}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="221" y="370" width="88" height="20" forecolor="#333333" uuid="65c21192-271f-4ac1-9e7b-c54f6be4d582"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{dlc_neutrophil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="137" width="83" height="20" forecolor="#333333" uuid="c4e12173-2606-421a-b859-c0acd5110858"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_mch}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="84" y="514" width="100" height="20" forecolor="#333333" uuid="7a611f33-3870-4a16-9a05-1f6045538029"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Lymphocyte]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="221" y="476" width="88" height="20" forecolor="#333333" uuid="c6d0de31-b749-4f40-82a1-75055ef37ca8"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{alc_monocyte}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="221" y="237" width="88" height="20" forecolor="#333333" uuid="2caee4d3-29f3-4794-9d27-ef5bd7104164"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdw}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="221" y="410" width="88" height="20" forecolor="#333333" uuid="08c7c221-50e4-4a20-97c9-9b9bf3877732"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{dlc_basophil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="476" width="100" height="20" forecolor="#333333" uuid="8585b52a-290b-4293-84b2-338ccd0a13bf"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_alc_monocyte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="496" width="100" height="20" forecolor="#333333" uuid="fac1ad03-3eee-4e54-ab43-17c5838674ae"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_alc_eosinophil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="534" width="83" height="20" forecolor="#333333" uuid="0a03a39c-1d43-4684-9f49-3ddc221f4058"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_alc_neutrophil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="350" width="83" height="20" forecolor="#333333" uuid="ad2c090e-4d0b-40c1-979a-8b6d1a13bdfb"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_dlc_monocyte}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="46" y="197" width="521" height="1" forecolor="#333333" backcolor="#868686" uuid="878ca8b4-e484-47c7-9797-de84dc681eb0"/>
+			</line>
+			<textField>
+				<reportElement x="474" y="410" width="83" height="20" forecolor="#333333" uuid="4933f4cb-05ac-4b77-8677-4deb3bd1ba9d"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_dlc_basophil}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="221" y="257" width="88" height="20" forecolor="#333333" uuid="3b093cb2-6395-482a-a27b-91d6b95dc913"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{packed_cell_volume}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="516" width="100" height="20" forecolor="#333333" uuid="0266ed9f-1286-4877-9b5c-d5ac3f582b6d"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_alc_lymphocytes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="390" width="100" height="20" forecolor="#333333" uuid="96ee03b8-1a05-4ba5-b0e6-20aa94af432f"/>
+				<text><![CDATA[dlc eosinophil]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="350" width="100" height="20" forecolor="#333333" uuid="05fb4f02-8f60-47ed-9006-76beb4d96ddc"/>
+				<text><![CDATA[dlc monocyte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="237" width="100" height="20" forecolor="#333333" uuid="ca9e2db3-aac1-4f21-9f48-6d1b4e912abf"/>
+				<text><![CDATA[RDW]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="474" y="390" width="83" height="20" forecolor="#333333" uuid="96cfee53-a8c6-42b4-a31a-3ad40d66ffeb"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_dlc_eosinophil}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="84" y="534" width="100" height="20" forecolor="#333333" uuid="6fc4e09a-e7ea-496b-b2c3-9d4bcdf2926e"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Neutrophil]]></text>
+			</staticText>
+			<line>
+				<reportElement x="46" y="313" width="521" height="1" forecolor="#333333" backcolor="#868686" uuid="8397603e-fe06-451c-b16b-4e09b233d4a1"/>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="221" y="136" width="88" height="20" forecolor="#333333" uuid="577827c4-2fd7-45fb-93c8-8705a6c92e73"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{mch}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="330" width="100" height="20" forecolor="#333333" uuid="d39ad5cb-40ad-4f7f-bdfe-66f59388b4eb"/>
+				<text><![CDATA[dlc lymphocyte]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="221" y="330" width="88" height="20" forecolor="#333333" uuid="a0668406-9b2a-4b3c-a36f-267ee2455da2"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{dlc_lymphocyte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="534" width="100" height="20" forecolor="#333333" uuid="2b496a41-e0e4-42f1-82e2-0ba82049c021"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_alc_neutrophil}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="221" y="534" width="88" height="20" forecolor="#333333" uuid="b7065ee1-2fbc-436b-90a1-1f3825e0fb6b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{alc_neutrophil}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="46" y="448" width="521" height="1" forecolor="#333333" backcolor="#868686" uuid="c87360c0-47ae-4f3b-b58e-95c08091441f"/>
+			</line>
+			<textField>
+				<reportElement x="474" y="257" width="83" height="20" forecolor="#333333" uuid="2628c196-32a4-4fe5-8fc1-e2597860e65d"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_packed_cell_volume}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="217" width="83" height="20" forecolor="#333333" uuid="86889fc9-9201-4829-ba9a-57e5b8751d24"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_rbc_count}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="221" y="96" width="88" height="20" forecolor="#333333" uuid="c9134fad-cb49-48d4-8e62-0acb27c86c2c"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hemoglobin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="237" width="100" height="20" forecolor="#333333" uuid="ca546a97-9412-4e7d-98f8-94ce7a1fd688"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_rdw}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="221" y="277" width="88" height="20" forecolor="#333333" uuid="24887ac4-413f-430f-b501-f25824cde82a"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_leucocyte_count}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="221" y="350" width="88" height="20" forecolor="#333333" uuid="14b9a99b-d8fb-4ac9-9d99-a12d303c3385"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{dlc_monocyte}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="221" y="496" width="88" height="20" forecolor="#333333" uuid="520441af-e6bd-446d-9189-d988eee2b586"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{alc_eosinophil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="157" width="83" height="20" forecolor="#333333" uuid="ca67d3e1-3c5b-4941-bf9a-be38184a8fd8"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_mchc}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="221" y="217" width="88" height="20" forecolor="#333333" uuid="216e6c63-d2f1-4b3b-b677-87310d169d73"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rbc_count}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="370" width="83" height="20" forecolor="#333333" uuid="a135d818-2b0b-42d7-98a6-81f50ed84dae"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_dlc_neutrophil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="370" width="100" height="20" forecolor="#333333" uuid="a8e9f66d-72df-4dfb-a8f6-2acd870ff0f7"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_dlc_neutrophil}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement isPrintRepeatedValues="false" x="221" y="554" width="88" height="20" forecolor="#333333" uuid="e7a995af-0126-4754-9161-daa125ad60d6"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{alc_basophil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="554" width="83" height="20" forecolor="#333333" uuid="2a494fec-6e4b-4139-a2a1-81fcfbdca917"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ru_alc_basophil}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="84" y="554" width="100" height="20" forecolor="#333333" uuid="27180f18-475a-453a-a37e-413fcf5fd8ca"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Basophil]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="341" y="554" width="100" height="20" forecolor="#333333" uuid="4515d46b-ea67-4f35-910e-1ce227393eb4"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{rdat_alc_basophil}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

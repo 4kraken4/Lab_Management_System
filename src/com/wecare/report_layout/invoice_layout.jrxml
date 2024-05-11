@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoice" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="583f9a1a-c5a7-4013-96d1-51a3e1dbd3ce">
+	<property name="ireport.zoom" value="1.6528925619834716"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT i.invoice_id, i.CID, i.date_time, i.total, CONCAT(c.fname, " ", c.lname) as customer_name, t.TTID, tt.price, tt.description, t.status FROM (( tbl_invoice i INNER JOIN tbl_test t ON i.invoice_id = t.IID ) INNER JOIN tbl_test_type tt ON tt.test_type_id = t.TTID) inner join tbl_customer c ON c.customer_id = i.CID where i.invoice_id = 'i00001';]]>
+	</queryString>
+	<field name="invoice_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date_time" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="customer_name" class="java.lang.String"/>
+	<field name="TTID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="price" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<pageHeader>
+		<band height="265" splitType="Stretch">
+			<rectangle radius="0">
+				<reportElement mode="Opaque" x="-21" y="0" width="597" height="247" isPrintInFirstWholeBand="true" forecolor="#FFFFFF" backcolor="#389DE8" uuid="ba682656-a1ba-4a24-98de-30dcf0804f86"/>
+			</rectangle>
+			<textField>
+				<reportElement x="107" y="167" width="68" height="14" forecolor="#FFFFFF" uuid="14e0cd16-2aa9-4310-9279-8d0e3d357a40"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="38" y="167" width="59" height="14" forecolor="#FFFFFF" uuid="7d75816b-53f9-4d2c-970b-e0097e61f523"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Inv no:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="181" width="59" height="14" forecolor="#FFFFFF" uuid="cb444d0a-8830-4eae-b896-b911c45170f1"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Customer:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="107" y="181" width="146" height="14" forecolor="#FFFFFF" uuid="f778f0a1-6069-473d-9c19-a491b25cf4ac"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="175" height="58" isPrintInFirstWholeBand="true" forecolor="#333333" uuid="322c4257-c5cb-4985-a925-327ac3c65e62"/>
+				<textElement verticalAlignment="Middle">
+					<font size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INVOICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="332" y="183" width="125" height="14" forecolor="#FFFFFF" uuid="abad40b4-6743-40b8-9035-4e6d3761c332"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[wecaremedicallabs@wecare.lk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="481" y="153" width="74" height="14" forecolor="#FFFFFF" uuid="aef8e1da-fe97-4984-b3c1-0b4d101787a6"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[No.45, 5th street]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="481" y="167" width="74" height="14" forecolor="#FFFFFF" uuid="3dab5cfb-db11-4c27-a909-470ac52cf8a0"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Baseline Road,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="481" y="183" width="74" height="14" forecolor="#FFFFFF" uuid="aaa8f5ab-d7f1-499a-8b91-7286f3084932"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Borella]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="481" y="197" width="74" height="14" forecolor="#FFFFFF" uuid="d19ea581-9508-4325-8fce-57715757ef14"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Colombo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="332" y="169" width="125" height="14" forecolor="#FFFFFF" uuid="ef40a31a-a316-4e93-8a51-1663ad76a67c"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[011-2 477 777]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="332" y="197" width="125" height="14" forecolor="#FFFFFF" uuid="1697e659-6b65-4f3b-b623-99de4d5a11c3"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[www.wecaremedicallabs.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="195" width="59" height="14" forecolor="#FFFFFF" uuid="345d357c-e9bb-47b7-a600-66f5d6c769ab"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Date of issue:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="107" y="195" width="100" height="14" forecolor="#FFFFFF" uuid="18f7a3e4-1bf6-4af6-b73a-69ebbd711366"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="107" y="69" width="146" height="42" forecolor="#333333" uuid="80061731-56dd-43f7-b53f-15ab8b3a402d"/>
+				<textElement verticalAlignment="Bottom" markup="none">
+					<font size="30" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="38" y="83" width="69" height="28" forecolor="#FFFFFF" uuid="069b9584-fff1-40ae-b6e2-9bcf0632a8cf"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total   Rs.]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="20" width="555" height="2" forecolor="#389DE8" uuid="109d3a22-f9c3-4c4b-929b-9ea7a8be9697"/>
+			</line>
+			<staticText>
+				<reportElement x="65" y="0" width="226" height="20" forecolor="#389DE8" uuid="1653fb9b-4d60-40cb-85c8-161ce3c59e93"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Test Registered]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="377" y="0" width="133" height="20" forecolor="#389DE8" uuid="47726183-d118-4fa8-86d1-a72e7c82e6b4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="155" splitType="Stretch">
+			<textField>
+				<reportElement x="377" y="79" width="133" height="25" forecolor="#333333" uuid="f84deaa2-18a2-4910-ab39-f354e7c4bd30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="38" y="36" width="279" height="119" forecolor="#333333" uuid="f3fe2ea5-e332-4c0e-9c06-e3513d814fd4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="65" y="11" width="226" height="24" forecolor="#333333" uuid="4340b624-400a-4999-971e-d1aa00910c5f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TTID}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="83" y="35" width="189" height="1" uuid="88a41c06-8359-4cde-b30c-8a40a7a78c49"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="26">
+			<staticText>
+				<reportElement x="65" y="0" width="226" height="23" forecolor="#389DE8" uuid="ae38c390-77d5-41cf-b0bf-4dc5f1305e99"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="377" y="0" width="133" height="23" forecolor="#389DE8" uuid="2c6ac80b-ca59-45b4-91b1-85e3ac41c518"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="555" height="2" forecolor="#389DE8" uuid="35219d58-e3a2-4c6e-8341-e16da8e67478"/>
+			</line>
+			<line>
+				<reportElement x="0" y="23" width="555" height="2" forecolor="#389DE8" uuid="797dff4f-3062-4bc7-b356-8213dbf3d867"/>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>
